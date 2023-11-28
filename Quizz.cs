@@ -1,30 +1,37 @@
 
-using System.Security.Cryptography.X509Certificates;
-
 namespace Data;
 
-class AllData
+class Quizz
 {
     public string[][] SportPrincipal { get; private set; } = new string[2][];
-        public string[][] LanguePrincipal { get; private set; } = new string[2][];
-        public string[][] TechnologiePrincipal { get; private set; } = new string[2][];
-        public string[][] SciencesPrincipal { get; private set; } = new string[2][];
-        public string[][] CuisinePrincipal {get;private set;} = new string [2][];
-        
-        public int score;
-        
+    public string[][] LanguePrincipal { get; private set; } = new string[2][];
+    public string[][] TechnologiePrincipal { get; private set; } = new string[2][];
+    public string[][] SciencesPrincipal { get; private set; } = new string[2][];
+    public string[][] CuisinePrincipal { get; private set; } = new string[2][];
+    public string[][] CuisineSecondaire {get;private set;} = new string[10][];
+    public string[] CuisineNumber {get;private set;} = new string[]{};
 
-        public AllData()
-        {
-            InitialiserDonnees();
-        }
-         private void InitialiserDonnees()
-        {
-    
+    public int Score { get { return score; } set { score = value; } }
+    public int NombreAleatoire { get; set; }
+
+    public string ThemeQuizz { get; set; }
+
+    private int score;
+
+
+
+    public Quizz()
+    {
+        ThemeQuizz = "";
+        InitialiserDonnees();
+    }
+    private void InitialiserDonnees()
+    {
+
         SportPrincipal[0] = new string[] {
                                         "Question : Quel joueur de basket-ball est souvent surnommé \"King James\" ?",
                                          "Question : En quelle année les Jeux olympiques d'été modernes ont-ils été relancés ?",
-                                        "Question : Quel est le seul pays à avoir participé à chaque Coupe du Monde de la FIFA depuis son commencement en 1930 ?", 
+                                        "Question : Quel est le seul pays à avoir participé à chaque Coupe du Monde de la FIFA depuis son commencement en 1930 ?",
                                         " Question : Qui détient le record du monde du saut à la perche en athlétisme (hommes) ?",
                                          "Question : Quelle équipe de football a remporté le plus grand nombre de Ligues des champions de l'UEFA ?",
                                          "Question : Quel est le sport principal des Jeux olympiques d'hiver ?",
@@ -34,8 +41,8 @@ class AllData
                                          "Question : Combien de joueurs composent une équipe de water-polo dans l'eau lors d'un match ?"
                                          };
 
-        SportPrincipal[1] = new string[] {"Lebron James", "1896", "Brésil", "Renaud Lavillenie", "Real Madrid", "Le ski", "Muhammad Ali", "États-Unis", "Bobby Jones", "Six"};
-        
+        SportPrincipal[1] = new string[] { "Lebron James", "1896", "Brésil", "Renaud Lavillenie", "Real Madrid", "Le ski", "Muhammad Ali", "États-Unis", "Bobby Jones", "Six" };
+
         LanguePrincipal[0] = new string[] {
                                             "Question : Qui est l'auteur de la série de romans \"Harry Potter\" ?",
                                             "Question : Quel est le titre du célèbre roman de George Orwell décrivant une dystopie totalitaire ?",
@@ -47,11 +54,11 @@ class AllData
                                             "Question : Quelle écrivaine britannique a créé le détective Hercule Poirot ?",
                                             "Question : Quel roman d'Aldous Huxley décrit une société future où la population est sous contrôle total ?",
                                             "Question : Qui a écrit le roman épistolaire \"Les Liaisons Dangereuses\" ?"
-                                            
+
         };
-         LanguePrincipal[1] = new string[] {"J.K. Rowling", "1984", " William Shakespeare", "Edmond Dantès", "Jane Austen", "Victor Hugo", "J.R.R. Tolkien", "Agatha Christie", "Le Meilleur des mondes", "Pierre Choderlos de Laclos"};
-         
-         TechnologiePrincipal[0] = new string[]{
+        LanguePrincipal[1] = new string[] { "J.K. Rowling", "1984", " William Shakespeare", "Edmond Dantès", "Jane Austen", "Victor Hugo", "J.R.R. Tolkien", "Agatha Christie", "Le Meilleur des mondes", "Pierre Choderlos de Laclos" };
+
+        TechnologiePrincipal[0] = new string[]{
                                             "Question : Quelle entreprise est derrière le développement du système d'exploitation Windows ?",
                                             "Question : Quel fondateur de SpaceX et Tesla est également cofondateur de PayPal ?",
                                             "Question : Qu'est-ce que le terme \"URL\" signifie en informatique ?",
@@ -64,18 +71,18 @@ class AllData
                                             "Question : Quelle entreprise a été fondée par Steve Jobs, Steve Wozniak et Ronald Wayne en 1976 ?"
 
          };
-         TechnologiePrincipal[1] = new string[]{"Microsoft",
-                                                "Elon Musk", 
+        TechnologiePrincipal[1] = new string[]{"Microsoft",
+                                                "Elon Musk",
                                                 "Uniform Resource Locator",
                                                  "Facebook",
                                                 "PHP",
                                                 "Bluetooth",
                                                 "Android",
-                                                 "Ransomware", 
-                                                "Fortran", 
+                                                 "Ransomware",
+                                                "Fortran",
                                                     "Apple Inc"};
-        
-         SciencesPrincipal[0] = new string[] {
+
+        SciencesPrincipal[0] = new string[] {
                                             "Question : Quel est l'élément le plus abondant dans l'univers ?",
                                             "Question : Quelle est l'unité de mesure de la force dans le système international ?",
                                             "Question : Quelle est la plus grande planète du système solaire ?",
@@ -86,7 +93,7 @@ class AllData
                                             "Question : Quel est le nom de la réaction nucléaire qui alimente le soleil ?",
                                             "Question : Quelle est la particule subatomique chargée négativement ?",
                                             "Question : Quel inventeur et scientifique a développé la théorie de l'électromagnétisme et a formulé les lois de l'induction électromagnétique ?"
-                                            
+
                                             };
         SciencesPrincipal[1] = new string[] {
                                             "L'hydrogène",
@@ -126,11 +133,44 @@ class AllData
                                             "Le boeuf bourguignon"
         };
         
-                              
-        }
-        public void Scoring(){
-            Console.WriteLine($"-------------------------------------------");
-                Console.WriteLine($"\nVotre Score est de {score}.");
-                Console.ReadLine();
-        }
+{
+
+    CuisineSecondaire[0] = new string[]{ "Tomate", "Citron vert", "Avocat" };
+
+
+    CuisineSecondaire[1] = new string[]{ "Griller", "Friture" };
+
+
+    CuisineSecondaire[2] = new string[]{ "Ravioli", "Farfalle" };
+
+
+    CuisineSecondaire[3] = new string[]{ "Cumin", "Persil" };
+
+    CuisineSecondaire[4] = new string[]{ "Sushi", "Tempura" };
+
+    CuisineSecondaire[5] = new string[]{ "Bouillir", "Mijoter" };
+
+
+    CuisineSecondaire[6] = new string[]{ "Lasagne", "Cannelloni" };
+
+
+    CuisineSecondaire[7] = new string[]{ "Beurre", "Levure" };
+
+
+    CuisineSecondaire[8] = new string[]{ "Sprite", "Ginger Ale" };
+
+
+    CuisineSecondaire[9] = new string[]{ "Coq au Vin", "Bouillabaisse" };
+
+    CuisineNumber = new string[]{"3","1","1","2","3", "3", "2", "1", "3", "1"};
+
+    
+};
+    }
+    public void ScoringView()
+    {
+        Console.WriteLine($"-------------------------------------------");
+        Console.WriteLine($"\nVotre Score est de {score}.");
+        Console.ReadLine();
+    }
 }
