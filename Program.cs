@@ -11,12 +11,6 @@ internal class Program
 
     static void Main(string[] args)
     {
-
-
-
-
-
-
         Random random = new Random();
 
 
@@ -129,10 +123,10 @@ internal class Program
                         {
                             Console.WriteLine(d.TechnologiePrincipal[0][i]);
                           
-                                Console.WriteLine($" Réponse 1 : {d.CuisineSecondaire[i][0]} \n Réponse 2 : {d.CuisineSecondaire[i][1]} \n Réponse 3 : {d.CuisineSecondaire[i][2]} ");
+                                Console.WriteLine($" Réponse 1 : {d.TechnologieSecondaire[i][0]} \n Réponse 2 : {d.TechnologieSecondaire[i][1]} \n Réponse 3 : {d.TechnologieSecondaire[i][2]} ");
                                 userInput = Console.ReadLine();
                                 string? userInputLower = userInput?.ToLower();
-                                if (userInputLower == d.CuisineNumber[i] || userInputLower == d.CuisinePrincipal[1][i].ToLower())
+                                if (userInputLower == d.TechnologieNumber[i] || userInputLower == d.TechnologiePrincipal[1][i].ToLower())
                                 {
                                     d.ScoringUpdate(d);
                                 }
@@ -150,10 +144,10 @@ internal class Program
                         {
                             Console.WriteLine(d.SciencesPrincipal[0][i]);
                           
-                                Console.WriteLine($" Réponse 1 : {d.CuisineSecondaire[i][0]} \n Réponse 2 : {d.CuisineSecondaire[i][1]} \n Réponse 3 : {d.CuisineSecondaire[i][2]} ");
+                                Console.WriteLine($" Réponse 1 : {d.SciencesSecondaire[i][0]} \n Réponse 2 : {d.SciencesSecondaire[i][1]} \n Réponse 3 : {d.SciencesSecondaire[i][2]} ");
                                 userInput = Console.ReadLine();
                                 string? userInputLower = userInput?.ToLower();
-                                if (userInputLower == d.CuisineNumber[i] || userInputLower == d.CuisinePrincipal[1][i].ToLower())
+                                if (userInputLower == d.SciencesNumber[i] || userInputLower == d.SciencesPrincipal[1][i].ToLower())
                                 {
                                     d.ScoringUpdate(d);
                                 }

@@ -10,7 +10,11 @@ class Quizz
     public string[][] LangueSecondaire { get; private set; } = new string[10][];
     public string[] LangueNumber { get; private set; } = new string[] { };
     public string[][] TechnologiePrincipal { get; private set; } = new string[2][];
+    public string[][] TechnologieSecondaire { get; private set; } = new string[10][];
+    public string[] TechnologieNumber { get; private set; } = new string[] { };
     public string[][] SciencesPrincipal { get; private set; } = new string[2][];
+     public string[][] SciencesSecondaire { get; private set; } = new string[10][];
+    public string[] SciencesNumber { get; private set; } = new string[] { };
     public string[][] CuisinePrincipal { get; private set; } = new string[2][];
     public string[][] CuisineSecondaire { get; private set; } = new string[10][];
     public string[] CuisineNumber { get; private set; } = new string[] { };
@@ -72,7 +76,7 @@ class Quizz
                                             "Question : Quelle technologie sans fil permet le transfert de données sur de courtes distances entre des appareils tels que des téléphones, des ordinateurs et des enceintes ?",
                                             "Question : Quel est le nom du système d'exploitation open source basé sur le noyau Linux, utilisé par de nombreux smartphones ?",
                                             "Question : Quel terme désigne une attaque informatique où des pirates bloquent l'accès à un système ou à des fichiers jusqu'à ce qu'une rançon soit payée ?",
-                                            "Question : Quel est le nom de la première programmation informatique basée sur des instructions symboliques plutôt que sur des signaux électriques directs ?",
+                                            "Question : Qu'est-ce que signifie IA?",
                                             "Question : Quelle entreprise a été fondée par Steve Jobs, Steve Wozniak et Ronald Wayne en 1976 ?"
 
          };
@@ -84,7 +88,7 @@ class Quizz
                                                 "Bluetooth",
                                                 "Android",
                                                  "Ransomware",
-                                                "Fortran",
+                                                "A-0",
                                                     "Apple Inc"};
 
         SciencesPrincipal[0] = new string[] {
@@ -234,6 +238,72 @@ class Quizz
             LangueSecondaire[9] = new string[] { "Pierre Choderlos de Laclos", "Gustave Flaubert", "Victor Hugo" };
 
             LangueNumber = new string[] { "1", "1", "2", "2", "3", "1", "3", "2", "2", "1" };
+
+
+        };
+         {
+
+            TechnologieSecondaire[0] = new string[] { "IBM", "Apple", "Microsoft" };
+
+
+            TechnologieSecondaire[1] = new string[] { "Jeff Bezos", "Bill Gates", "Elon Musk" };
+
+
+            TechnologieSecondaire[2] = new string[] { "Universal Resource Locator", "Uniform Resource Locator", "User Rights Language" };
+
+
+            TechnologieSecondaire[3] = new string[] { "Twitter", "Facebook", "Instagram" };
+
+            TechnologieSecondaire[4] = new string[] { "PHP", "HTML", "Javascript" };
+
+            TechnologieSecondaire[5] = new string[] { "VPN", "Bluetooth", "DNS" };
+
+
+            TechnologieSecondaire[6] = new string[] { "Samsung", "IOS", "Android" };
+
+
+            TechnologieSecondaire[7] = new string[] { "Ransomware", "Adware", "Blockware" };
+
+
+            TechnologieSecondaire[8] = new string[] { "Incorporate arithmetic", "Intelligence artificiel", "Infinité Avancée" };
+
+
+            TechnologieSecondaire[9] = new string[] { "Macdonald", "Microsoft", "Apple INC" };
+
+            TechnologieNumber = new string[] { "3", "3", "2", "2", "1", "2", "3", "1", "2", "3" };
+
+
+        };
+         {
+
+            SciencesSecondaire[0] = new string[] { "Le carbone", "L'hydrogène'", "Le lithium" };
+
+
+            SciencesSecondaire[1] = new string[] { "Le Volt", "Le Newton", "L'ampère" };
+
+
+            SciencesSecondaire[2] = new string[] { "Jupiter", "Pluton", "Saturne" };
+
+
+            SciencesSecondaire[3] = new string[] { "La photosynthèse", "Absorption photonique", "Transformation lumineuse" };
+
+            SciencesSecondaire[4] = new string[] { "Max Planck", "Isaac Newton", "Albert Einstein" };
+
+            SciencesSecondaire[5] = new string[] { "Le Foie", "Le Pancréas", "Le Coeur" };
+
+
+            SciencesSecondaire[6] = new string[] { "L'exosphère", "Le thermosphère", "La troposphère" };
+
+
+            SciencesSecondaire[7] = new string[] { "La fusion nucléaire", "La fission nucléaire", "La désintégration alpha" };
+
+
+            SciencesSecondaire[8] = new string[] { "L'électron", "Le neutron", "Le proton" };
+
+
+            SciencesSecondaire[9] = new string[] { "Nikola Tesla", "Thomas Edison", "Michael Faraday" };
+
+            SciencesNumber = new string[] { "2", "2", "1", "1", "3", "2", "2", "1", "1", "3" };
 
 
         };
