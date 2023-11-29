@@ -1,19 +1,27 @@
 ﻿using System.Runtime.InteropServices;
 using Data;
-
+using Newtonsoft.Json;
+using System.IO;
 
 namespace MyApp;
 
 internal class Program
 {
 
+
     static void Main(string[] args)
     {
+
+
+
+
+
+
         Random random = new Random();
 
 
 
-
+        string? userChoice;
         Quizz d = new Quizz();
         do
         {
@@ -75,83 +83,65 @@ internal class Program
                 switch (d.ThemeQuizz)
                 {
                     case "Sport":
-                        for (int i = 0; i < 10; i++)
+                           for (int i = 0; i < 10; i++)
                         {
                             Console.WriteLine(d.SportPrincipal[0][i]);
-                            userInput = Console.ReadLine();
-                            string? userInputLower = userInput?.ToLower();
-                            string[] userInputSplit = userInput.Split(' ');
-
-                            bool isCorrect = d.SportPrincipal[1][i]!.Split(' ')
-                    .Any(expectedWord => userInputSplit.Any(userWord => userWord.ToLower() == expectedWord.ToLower()));
-                            if (isCorrect)
-                            {
-                                Console.WriteLine("Bravo");
-                                d.Score++;
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Faux, la réponse est {d.SportPrincipal[1][i]}");
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                        }
+                          
+                                Console.WriteLine($" Réponse 1 : {d.SportSecondaire[i][0]} \n Réponse 2 : {d.SportSecondaire[i][1]} \n Réponse 3 : {d.SportSecondaire[i][2]} ");
+                                userInput = Console.ReadLine();
+                                string? userInputLower = userInput?.ToLower();
+                                if (userInputLower == d.SportNumber[i] || userInputLower == d.SportPrincipal[1][i].ToLower())
+                                {
+                                    d.ScoringUpdate(d);
+                                }
+                                else
+                                {
+                                    d.BadAnswer(d.SportPrincipal[1][i]);
+                                }
+                            } 
+                               
                         d.ScoringView();
                         return;
 
                     case "Langues et littérature":
-                        for (int i = 0; i < 10; i++)
+                           for (int i = 0; i < 10; i++)
                         {
                             Console.WriteLine(d.LanguePrincipal[0][i]);
-                            userInput = Console.ReadLine();
-                            string? userInputLower = userInput?.ToLower();
-                            string[] userInputSplit = userInput.Split(' ');
-
-                            bool isCorrect = d.LanguePrincipal[1][i]!.Split(' ')
-                    .Any(expectedWord => userInputSplit.Any(userWord => userWord.ToLower() == expectedWord.ToLower()));
-                            if (isCorrect)
-                            {
-                                Console.WriteLine("Bravo");
-                                d.Score++;
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Faux, la réponse est {d.LanguePrincipal[1][i]}");
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                        }
+                          
+                                Console.WriteLine($" Réponse 1 : {d.LangueSecondaire[i][0]} \n Réponse 2 : {d.LangueSecondaire[i][1]} \n Réponse 3 : {d.LangueSecondaire[i][2]} ");
+                                userInput = Console.ReadLine();
+                                string? userInputLower = userInput?.ToLower();
+                                if (userInputLower == d.LangueNumber[i] || userInputLower == d.LanguePrincipal[1][i].ToLower())
+                                {
+                                    d.ScoringUpdate(d);
+                                }
+                                else
+                                {
+                                    d.BadAnswer(d.LanguePrincipal[1][i]);
+                                }
+                            } 
+                               
                         d.ScoringView();
                         return;
 
                     case "Technologie et informatique":
-                        for (int i = 0; i < 10; i++)
+                           for (int i = 0; i < 10; i++)
                         {
                             Console.WriteLine(d.TechnologiePrincipal[0][i]);
-                            userInput = Console.ReadLine();
-                            string? userInputLower = userInput?.ToLower();
-                            string[] userInputSplit = userInput.Split(' ');
-
-                            bool isCorrect = d.TechnologiePrincipal[1][i]!.Split(' ')
-                    .Any(expectedWord => userInputSplit.Any(userWord => userWord.ToLower() == expectedWord.ToLower()));
-                            if (isCorrect)
-                            {
-                                Console.WriteLine("Bravo");
-                                d.Score++;
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Faux, la réponse est {d.TechnologiePrincipal[1][i]}");
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                        }
+                          
+                                Console.WriteLine($" Réponse 1 : {d.CuisineSecondaire[i][0]} \n Réponse 2 : {d.CuisineSecondaire[i][1]} \n Réponse 3 : {d.CuisineSecondaire[i][2]} ");
+                                userInput = Console.ReadLine();
+                                string? userInputLower = userInput?.ToLower();
+                                if (userInputLower == d.CuisineNumber[i] || userInputLower == d.CuisinePrincipal[1][i].ToLower())
+                                {
+                                    d.ScoringUpdate(d);
+                                }
+                                else
+                                {
+                                    d.BadAnswer(d.TechnologiePrincipal[1][i]);
+                                }
+                            } 
+                               
                         d.ScoringView();
                         return;
 
@@ -159,26 +149,20 @@ internal class Program
                         for (int i = 0; i < 10; i++)
                         {
                             Console.WriteLine(d.SciencesPrincipal[0][i]);
-                            userInput = Console.ReadLine();
-                            string? userInputLower = userInput?.ToLower();
-                            string[] userInputSplit = userInput.Split(' ');
-
-                            bool isCorrect = d.SportPrincipal[1][i]!.Split(' ')
-                    .Any(expectedWord => userInputSplit.Any(userWord => userWord.ToLower() == expectedWord.ToLower()));
-                            if (isCorrect)
-                            {
-                                Console.WriteLine("Bravo");
-                                d.Score++;
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Faux, la réponse est {d.SciencesPrincipal[1][i]}");
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                        }
+                          
+                                Console.WriteLine($" Réponse 1 : {d.CuisineSecondaire[i][0]} \n Réponse 2 : {d.CuisineSecondaire[i][1]} \n Réponse 3 : {d.CuisineSecondaire[i][2]} ");
+                                userInput = Console.ReadLine();
+                                string? userInputLower = userInput?.ToLower();
+                                if (userInputLower == d.CuisineNumber[i] || userInputLower == d.CuisinePrincipal[1][i].ToLower())
+                                {
+                                    d.ScoringUpdate(d);
+                                }
+                                else
+                                {
+                                    d.BadAnswer(d.SciencesPrincipal[1][i]);
+                                }
+                            } 
+                               
                         d.ScoringView();
                         return;
 
@@ -186,51 +170,20 @@ internal class Program
                         for (int i = 0; i < 10; i++)
                         {
                             Console.WriteLine(d.CuisinePrincipal[0][i]);
-                            Console.WriteLine("1) Trois propositions 2) Réponse libre");
-                            userInput = Console.ReadLine();
-                            if (userInput == "1" || userInput == "Trois propositions")
-                            {
+                          
                                 Console.WriteLine($" Réponse 1 : {d.CuisineSecondaire[i][0]} \n Réponse 2 : {d.CuisineSecondaire[i][1]} \n Réponse 3 : {d.CuisineSecondaire[i][2]} ");
                                 userInput = Console.ReadLine();
-                                if (userInput == d.CuisineNumber[i])
+                                string? userInputLower = userInput?.ToLower();
+                                if (userInputLower == d.CuisineNumber[i] || userInputLower == d.CuisinePrincipal[1][i].ToLower())
                                 {
-                                    Console.WriteLine("Bravo");
-                                    d.Score++;
-                                    Console.ReadLine();
-                                    Console.Clear();
+                                    d.ScoringUpdate(d);
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"Faux, la réponse est {d.CuisinePrincipal[1][i]}");
-                                    Console.ReadLine();
-                                    Console.Clear();
+                                    d.BadAnswer(d.CuisinePrincipal[1][i]);
                                 }
-                            } else{ 
-                                Console.WriteLine();
-                                userInput = Console.ReadLine();
-                            string? userInputLower = userInput?.ToLower();
-                            string[] userInputSplit = userInput.Split(' ');
-
-                            bool isCorrect = d.SportPrincipal[1][i]!.Split(' ')
-                    .Any(expectedWord => userInputSplit.Any(userWord => userWord.ToLower() == expectedWord.ToLower()));
-                            if (isCorrect)
-                            {
-                                Console.WriteLine("Bravo");
-                                d.Score++;
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                            else
-                            {
-                                Console.WriteLine($"Faux, la réponse est {d.CuisinePrincipal[1][i]}");
-                                Console.ReadLine();
-                                Console.Clear();
-                            }
-                        }
-                             }
-
-
-                            
+                            } 
+                               
                         d.ScoringView();
                         return;
 

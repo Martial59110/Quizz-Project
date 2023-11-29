@@ -1,0 +1,44 @@
+{
+    "questions": [
+      {
+        "question": "Quel joueur de basket-ball est souvent surnommé King James ?",
+        "reponses": ["Lebron James"]
+      },
+      {
+        "question": "En quelle année les Jeux olympiques d'été modernes ont-ils été relancés ?",
+        "reponses": ["1896"]
+      },
+      {
+        "question": "Quel est le seul pays à avoir participé à chaque Coupe du Monde de la FIFA depuis son commencement en 1930 ?",
+        "reponses": ["Brésil"]
+      },
+      {
+        "question": "Qui détient le record du monde du saut à la perche en athlétisme (hommes) ?",
+        "reponses": ["Renaud Lavillenie"]
+      },
+      {
+        "question": "Quelle équipe de football a remporté le plus grand nombre de Ligues des champions de l'UEFA ?",
+        "reponses": ["Real Madrid"]
+      },
+      {
+        "question": "Quel est le sport principal des Jeux olympiques d'hiver ?",
+        "reponses": ["Le ski"]
+      },
+      {
+        "question": "Qui est souvent appelé \"The Greatest\" et est considéré comme l'un des plus grands boxeurs de tous les temps ?",
+        "reponses": ["Muhammad Ali"]
+      },
+      {
+        "question": "Quel pays a remporté le plus grand nombre de médailles d'or aux Jeux olympiques d'été de 2016 ?",
+        "reponses": ["États-Unis"]
+      },
+      {
+        "question": "Quel est le seul golfeur à avoir remporté les quatre tournois majeurs au cours de la même année calendaire ?",
+        "reponses": ["Bobby Jones"]
+      },
+      {
+        "question": "Combien de joueurs composent une équipe de water-polo dans l'eau lors d'un match ?",
+        "reponses": ["Six"]
+      }
+    ]
+  }

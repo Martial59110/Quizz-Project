@@ -4,12 +4,16 @@ namespace Data;
 class Quizz
 {
     public string[][] SportPrincipal { get; private set; } = new string[2][];
+    public string[][] SportSecondaire { get; private set; } = new string[10][];
+    public string[] SportNumber { get; private set; } = new string[] { };
     public string[][] LanguePrincipal { get; private set; } = new string[2][];
+    public string[][] LangueSecondaire { get; private set; } = new string[10][];
+    public string[] LangueNumber { get; private set; } = new string[] { };
     public string[][] TechnologiePrincipal { get; private set; } = new string[2][];
     public string[][] SciencesPrincipal { get; private set; } = new string[2][];
     public string[][] CuisinePrincipal { get; private set; } = new string[2][];
-    public string[][] CuisineSecondaire {get;private set;} = new string[10][];
-    public string[] CuisineNumber {get;private set;} = new string[]{};
+    public string[][] CuisineSecondaire { get; private set; } = new string[10][];
+    public string[] CuisineNumber { get; private set; } = new string[] { };
 
     public int Score { get { return score; } set { score = value; } }
     public int NombreAleatoire { get; set; }
@@ -17,6 +21,7 @@ class Quizz
     public string ThemeQuizz { get; set; }
 
     private int score;
+    private int i;
 
 
 
@@ -41,7 +46,7 @@ class Quizz
                                          "Question : Combien de joueurs composent une équipe de water-polo dans l'eau lors d'un match ?"
                                          };
 
-        SportPrincipal[1] = new string[] { "Lebron James", "1896", "Brésil", "Renaud Lavillenie", "Real Madrid", "Le ski", "Muhammad Ali", "États-Unis", "Bobby Jones", "Six" };
+        SportPrincipal[1] = new string[] { "Lebron James", "1896", "Brésil", "Renaud Lavillenie", "Real Madrid", "Le ski", "Muhammad Ali", "États-Unis", "Tiger Woods", "Sept" };
 
         LanguePrincipal[0] = new string[] {
                                             "Question : Qui est l'auteur de la série de romans \"Harry Potter\" ?",
@@ -121,56 +126,145 @@ class Quizz
 
         };
         CuisinePrincipal[1] = new string[]{
-                                            "L'avocat",
-                                            "La cuisson à la vapeur",
-                                            "Les spaghettis",
-                                            "Le basilic",
-                                            "Le sushi",
-                                            "La sauté",
-                                            "Les involtinis",
-                                            "Le beurre",
-                                            "Le cola",
-                                            "Le boeuf bourguignon"
+                                            "Avocat",
+                                            "Cuisson à la vapeur",
+                                            "Spaghettis",
+                                            "Basilic",
+                                            "Sushi",
+                                            "Sauté",
+                                            "Involtinis",
+                                            "Beurre",
+                                            "Cola",
+                                            "Boeuf bourguignon"
         };
-        
-{
 
-    CuisineSecondaire[0] = new string[]{ "Tomate", "Citron vert", "Avocat" };
+        {
 
-
-    CuisineSecondaire[1] = new string[]{ "Griller", "Friture" };
+            CuisineSecondaire[0] = new string[] { "Tomate", "Citron vert", "Avocat" };
 
 
-    CuisineSecondaire[2] = new string[]{ "Ravioli", "Farfalle" };
+            CuisineSecondaire[1] = new string[] { "La cuisson à la vapeur", "Griller", "Friture" };
 
 
-    CuisineSecondaire[3] = new string[]{ "Cumin", "Persil" };
-
-    CuisineSecondaire[4] = new string[]{ "Sushi", "Tempura" };
-
-    CuisineSecondaire[5] = new string[]{ "Bouillir", "Mijoter" };
+            CuisineSecondaire[2] = new string[] { "spaghettis", "Ravioli", "Farfalle" };
 
 
-    CuisineSecondaire[6] = new string[]{ "Lasagne", "Cannelloni" };
+            CuisineSecondaire[3] = new string[] { "Cumin", "basilic", "Persil" };
+
+            CuisineSecondaire[4] = new string[] { "Ramen", "Tempura", "sushi" };
+
+            CuisineSecondaire[5] = new string[] { "Bouillir", "Mijoter", "sauté" };
 
 
-    CuisineSecondaire[7] = new string[]{ "Beurre", "Levure" };
+            CuisineSecondaire[6] = new string[] { "Lasagne", "involtinis", "Cannelloni" };
 
 
-    CuisineSecondaire[8] = new string[]{ "Sprite", "Ginger Ale" };
+            CuisineSecondaire[7] = new string[] { "Beurre", "Levure", "huile" };
 
 
-    CuisineSecondaire[9] = new string[]{ "Coq au Vin", "Bouillabaisse" };
+            CuisineSecondaire[8] = new string[] { "Sprite", "Ginger Ale", "cola" };
 
-    CuisineNumber = new string[]{"3","1","1","2","3", "3", "2", "1", "3", "1"};
 
-    
-};
+            CuisineSecondaire[9] = new string[] { "boeuf bourguignon", "Coq au Vin", "Bouillabaisse" };
+
+            CuisineNumber = new string[] { "3", "1", "1", "2", "3", "3", "2", "1", "3", "1" };
+
+
+        };
+        {
+
+            SportSecondaire[0] = new string[] { "John James", "Lebron James", "Kévin James" };
+
+
+            SportSecondaire[1] = new string[] { "1896", "1920", "1853" };
+
+
+            SportSecondaire[2] = new string[] { "Espagne", "Brésil", "France" };
+
+
+            SportSecondaire[3] = new string[] { "Ernest John Obiena", "Jacques Goldman", "Renaud Lavillenie" };
+
+            SportSecondaire[4] = new string[] { "Le FC Milan ", "Les Smiley Kickers", "Real Madrid" };
+
+            SportSecondaire[5] = new string[] { "Le Ski", "Le hockey sur glace", "La pétanque" };
+
+
+            SportSecondaire[6] = new string[] { "Mike Tyson", "Muhammad Ali", "Joe Frazier" };
+
+
+            SportSecondaire[7] = new string[] { "La Chine", "Les États-Unis", "La France" };
+
+
+            SportSecondaire[8] = new string[] { "Phil Mickelson", "Bobby Jones", "Tiger Woods" };
+
+
+            SportSecondaire[9] = new string[] { "Sept", "Huit", "Neuf" };
+
+            SportNumber = new string[] { "2", "1", "2", "3", "3", "1", "2", "2", "3", "1" };
+
+
+        };
+        {
+
+            LangueSecondaire[0] = new string[] { "Jk Rowling", "Stephen King", "Laétitia Colombani" };
+
+
+            LangueSecondaire[1] = new string[] { "1984", "Le Monde d'hier", "VOYAGE AU BOUT DE LA NUIT" };
+
+
+            LangueSecondaire[2] = new string[] { "William Wordsworth", "William Shakespeare", "Christopher Marlowe" };
+
+
+            LangueSecondaire[3] = new string[] { "Athos", "Edmond Dantès", "Edmond Lavillenie" };
+
+            LangueSecondaire[4] = new string[] { "Emily Dickinson", "Charlotte Brontë", "Jane Austen" };
+
+            LangueSecondaire[5] = new string[] { "Victor Hugo", "Gustave Flaubert", "Fiodor Dostoïevski" };
+
+
+            LangueSecondaire[6] = new string[] { "HP Lovecraft", "C.S. Lewis", "JRR Tolkien" };
+
+
+            LangueSecondaire[7] = new string[] { "Dorothy L. Sayers", "Agatha Christie", "Thierry Landouillard" };
+
+
+            LangueSecondaire[8] = new string[] { "Fahrenheit 451", "Le Meilleur des mondes", "Area 51" };
+
+
+            LangueSecondaire[9] = new string[] { "Pierre Choderlos de Laclos", "Gustave Flaubert", "Victor Hugo" };
+
+            LangueNumber = new string[] { "1", "1", "2", "2", "3", "1", "3", "2", "2", "1" };
+
+
+        };
     }
+
+
+
+
+
+
+
+
+
     public void ScoringView()
     {
         Console.WriteLine($"-------------------------------------------");
         Console.WriteLine($"\nVotre Score est de {score}.");
         Console.ReadLine();
+    }
+    public void ScoringUpdate(Quizz d)
+    {
+
+        Score++;
+        Console.WriteLine($"Bravo, votre score est maintenant de {d.Score} !");
+        Console.ReadLine();
+        Console.Clear();
+    }
+    public void BadAnswer(string tableau)
+    {
+        Console.WriteLine($"Faux, la réponse est {tableau}");
+        Console.ReadLine();
+        Console.Clear();
     }
 }
