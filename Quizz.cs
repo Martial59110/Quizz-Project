@@ -183,7 +183,7 @@ class Quizz
             SportSecondaire[1] = new string[] { "1896", "1920", "1853" };
 
 
-            SportSecondaire[2] = new string[] { "Espagne", "Brésil", "France" };
+            SportSecondaire[2] = new string[] { "Espagne", "Brésil", "France" }; 
 
 
             SportSecondaire[3] = new string[] { "Ernest John Obiena", "Jacques Goldman", "Renaud Lavillenie" };
