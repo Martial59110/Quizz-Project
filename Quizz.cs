@@ -13,7 +13,7 @@ class Quizz
     public string[][] TechnologieSecondaire { get; private set; } = new string[10][];
     public string[] TechnologieNumber { get; private set; } = new string[] { };
     public string[][] SciencesPrincipal { get; private set; } = new string[2][];
-     public string[][] SciencesSecondaire { get; private set; } = new string[10][];
+    public string[][] SciencesSecondaire { get; private set; } = new string[10][];
     public string[] SciencesNumber { get; private set; } = new string[] { };
     public string[][] CuisinePrincipal { get; private set; } = new string[2][];
     public string[][] CuisineSecondaire { get; private set; } = new string[10][];
@@ -25,7 +25,7 @@ class Quizz
     public string ThemeQuizz { get; set; }
 
     private int score;
-    
+
 
 
 
@@ -88,7 +88,7 @@ class Quizz
                                                 "Bluetooth",
                                                 "Android",
                                                  "Ransomware",
-                                                "A-0",
+                                                "Intelligence artificiel",
                                                     "Apple Inc"};
 
         SciencesPrincipal[0] = new string[] {
@@ -183,7 +183,7 @@ class Quizz
             SportSecondaire[1] = new string[] { "1896", "1920", "1853" };
 
 
-            SportSecondaire[2] = new string[] { "Espagne", "Brésil", "France" }; 
+            SportSecondaire[2] = new string[] { "Espagne", "Brésil", "France" };
 
 
             SportSecondaire[3] = new string[] { "Ernest John Obiena", "Jacques Goldman", "Renaud Lavillenie" };
@@ -241,7 +241,7 @@ class Quizz
 
 
         };
-         {
+        {
 
             TechnologieSecondaire[0] = new string[] { "IBM", "Apple", "Microsoft" };
 
@@ -274,7 +274,7 @@ class Quizz
 
 
         };
-         {
+        {
 
             SciencesSecondaire[0] = new string[] { "Le carbone", "L'hydrogène'", "Le lithium" };
 
@@ -314,12 +314,12 @@ class Quizz
 
 
 
-                       /* #############     Méthodes     #################### */
+    /* #############     Méthodes     #################### */
 
 
     public void ScoringFinalView()
     {
-         Console.WriteLine("Le quizz est maintenant terminé.");
+        Console.WriteLine("Le quizz est maintenant terminé.");
         Console.WriteLine("-------------------------------------------");
         Console.WriteLine($"\nVotre Score est de {score}.");
         Console.ReadLine();
@@ -345,7 +345,7 @@ class Quizz
     }
     public string UserLower()
     {
-        
+
         string? userInput = Console.ReadLine();
         string? userInputLow = userInput?.ToLower();
         return userInputLow;
@@ -353,23 +353,23 @@ class Quizz
 
 
     public void ProcessQuiz(string[][] principal, string[][] secondaire, string[] numbers)
-{
-    for (int i = 0; i < 10; i++)
     {
-        Console.WriteLine(principal[0][i]);
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(principal[0][i]);
 
-        Console.WriteLine($" Réponse 1 : {secondaire[i][0]} \n Réponse 2 : {secondaire[i][1]} \n Réponse 3 : {secondaire[i][2]} ");
-        string userInputLow = UserLower();
-        if (userInputLow == numbers[i] || userInputLow == principal[1][i].ToLower())
-        {
-            ScoringUpdate(this);
+            Console.WriteLine($" Réponse 1 : {secondaire[i][0]} \n Réponse 2 : {secondaire[i][1]} \n Réponse 3 : {secondaire[i][2]} ");
+            string userInputLow = UserLower();
+            if (userInputLow == numbers[i] || userInputLow == principal[1][i].ToLower())
+            {
+                ScoringUpdate(this);
+            }
+            else
+            {
+                BadAnswer(principal[1][i]);
+            }
         }
-        else
-        {
-            BadAnswer(principal[1][i]);
-        }
+
+        ScoringFinalView();
     }
-
-    ScoringFinalView();
-}
 }
