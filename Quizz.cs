@@ -25,7 +25,7 @@ class Quizz
     public string ThemeQuizz { get; set; }
 
     private int score;
-    private int i;
+    
 
 
 
@@ -314,12 +314,13 @@ class Quizz
 
 
 
+                       /* #############     Méthodes     #################### */
 
 
-
-    public void ScoringView()
+    public void ScoringFinalView()
     {
-        Console.WriteLine($"-------------------------------------------");
+         Console.WriteLine("Le quizz est maintenant terminé.");
+        Console.WriteLine("-------------------------------------------");
         Console.WriteLine($"\nVotre Score est de {score}.");
         Console.ReadLine();
     }
@@ -327,7 +328,7 @@ class Quizz
     {
 
         Score++;
-        Console.WriteLine($"Bravo, votre score est maintenant de {d.Score} !");
+        Console.Write($"Bravo, votre score est maintenant de {d.Score} !");
         Console.ReadLine();
         Console.Clear();
     }
@@ -337,4 +338,38 @@ class Quizz
         Console.ReadLine();
         Console.Clear();
     }
+    public void IfExit()
+    {
+        Console.WriteLine("A bientôt");
+        Console.ReadLine();
+    }
+    public string UserLower()
+    {
+        
+        string? userInput = Console.ReadLine();
+        string? userInputLow = userInput?.ToLower();
+        return userInputLow;
+    }
+
+
+    public void ProcessQuiz(string[][] principal, string[][] secondaire, string[] numbers)
+{
+    for (int i = 0; i < 10; i++)
+    {
+        Console.WriteLine(principal[0][i]);
+
+        Console.WriteLine($" Réponse 1 : {secondaire[i][0]} \n Réponse 2 : {secondaire[i][1]} \n Réponse 3 : {secondaire[i][2]} ");
+        string userInputLow = UserLower();
+        if (userInputLow == numbers[i] || userInputLow == principal[1][i].ToLower())
+        {
+            ScoringUpdate(this);
+        }
+        else
+        {
+            BadAnswer(principal[1][i]);
+        }
+    }
+
+    ScoringFinalView();
+}
 }
