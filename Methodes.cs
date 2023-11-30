@@ -7,6 +7,7 @@ class Methodes
     public string ThemeQuizz { get; set; }
     public int Score { get { return score; } set { score = value; } }
     public int NombreAleatoire { get; set; }
+    
 
 
 
@@ -148,5 +149,6 @@ switch (m.ThemeQuizz)
 
 
     }
+ 
 
 }
