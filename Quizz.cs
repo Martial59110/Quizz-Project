@@ -3,6 +3,11 @@ namespace Data;
 
 class Quizz
 {
+
+ 
+
+
+
     public string[][] SportPrincipal { get; private set; } = new string[2][];
     public string[][] SportSecondaire { get; private set; } = new string[10][];
     public string[] SportNumber { get; private set; } = new string[] { };
@@ -351,6 +356,37 @@ class Quizz
         return userInputLow;
     }
 
+public void SetThemeQuizz(Quizz d, string userInputLow)
+{
+    switch (userInputLow)
+    {
+        case "1":
+        case "sport":
+            d.ThemeQuizz = "Sport";
+            break;
+        case "2":
+        case "littérature":
+            d.ThemeQuizz = "Langues et littérature";
+            break;
+        case "3":
+        case "technologie":
+            d.ThemeQuizz = "Technologie et informatique";
+            break;
+        case "4":
+        case "sciences":
+        case "science":
+            d.ThemeQuizz = "Sciences et nature";
+            break;
+        case "5":
+        case "cuisine":
+        case "gastronomie":
+            d.ThemeQuizz = "Cuisine et gastronomie";
+            break;
+        default:
+            d.ThemeQuizz = "Rien du tout";
+            break;
+    }
+}
 
     public void ProcessQuiz(string[][] principal, string[][] secondaire, string[] numbers)
     {
@@ -372,4 +408,10 @@ class Quizz
 
         ScoringFinalView();
     }
+  
+
+
+
+
+    
 }

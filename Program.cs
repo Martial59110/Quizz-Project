@@ -1,5 +1,8 @@
 ﻿
 using Data;
+using CsvHelper;
+using System.IO;
+using System.Globalization;
 
 
 
@@ -11,10 +14,12 @@ internal class Program
 
     static void Main(string[] args)
     {
+        
+
         Random random = new Random();
         Quizz d = new Quizz();
         string userInputLow;
-        
+
         do
         {
             Console.WriteLine("Tapez 1 pour choisir un quiz aléatoire, tapez 2 pour choisir une catégorie, et tapez 3 pour quitter l'application.");
@@ -37,49 +42,22 @@ internal class Program
                         d.IfExit();
                         return;
                 }
-                switch (userInputLow)
-                {
-                    case "1":
-                    case "sport":
-                        d.ThemeQuizz = "Sport";
+                
+                d.SetThemeQuizz(d, userInputLow);
 
-                        break;
-                    case "2":
-                    case "littérature":
-                    case "litterature":
-                        d.ThemeQuizz = "Langues et littérature";
-                        break;
-                    case "3":
-                    case "technologie":
-                        d.ThemeQuizz = "Technologie et informatique";
-                        break;
-                    case "4":
-                    case "sciences":
-                    case "science":
-                        d.ThemeQuizz = "Sciences et nature";
-                        break;
-                    case "5":
-                    case "cuisine":
-                    case "gastronomie":
-                        d.ThemeQuizz = "Cuisine et gastronomie";
-                        break;
-                    default:
-                        d.ThemeQuizz = "\"Rien du tout\"";
-                        break;
-                }
                 Console.WriteLine($"La catégorie sélectionné est {d.ThemeQuizz}");
                 switch (d.ThemeQuizz)
                 {
                     case "Sport":
-                           d.ProcessQuiz(d.SportPrincipal, d.SportSecondaire, d.SportNumber);
-                           return;
+                        d.ProcessQuiz(d.SportPrincipal, d.SportSecondaire, d.SportNumber);
+                        return;
 
                     case "Langues et littérature":
-                           d.ProcessQuiz(d.LanguePrincipal, d.LangueSecondaire, d.LangueNumber);
+                        d.ProcessQuiz(d.LanguePrincipal, d.LangueSecondaire, d.LangueNumber);
                         return;
 
                     case "Technologie et informatique":
-                         d.ProcessQuiz(d.TechnologiePrincipal, d.TechnologieSecondaire, d.TechnologieNumber);
+                        d.ProcessQuiz(d.TechnologiePrincipal, d.TechnologieSecondaire, d.TechnologieNumber);
                         return;
 
                     case "Sciences et nature":
@@ -87,7 +65,7 @@ internal class Program
                         return;
 
                     case "Cuisine et gastronomie":
-                       d.ProcessQuiz(d.CuisinePrincipal, d.CuisineSecondaire, d.CuisineNumber);
+                        d.ProcessQuiz(d.CuisinePrincipal, d.CuisineSecondaire, d.CuisineNumber);
                         return;
 
                 }
@@ -98,4 +76,6 @@ internal class Program
             }
         } while (true);
     }
+
+   
 }
