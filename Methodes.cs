@@ -1,3 +1,5 @@
+using Data;
+
 namespace meth;
 
 class Methodes
@@ -40,7 +42,7 @@ class Methodes
                 break;
         }
 
-
+        Console.WriteLine($"La catégorie sélectionné est {m.ThemeQuizz}");
 
 
     }
@@ -115,6 +117,36 @@ class Methodes
         }
 
         ScoringFinalView();
+    }
+
+    public void QuizContainer(Methodes m, Quizz d)
+    {
+switch (m.ThemeQuizz)
+                {
+                    case "Sport":
+                        m.ProcessQuiz(d.SportPrincipal, d.SportSecondaire, d.SportNumber);
+                        return;
+
+                    case "Langues et littérature":
+                        m.ProcessQuiz(d.LanguePrincipal, d.LangueSecondaire, d.LangueNumber);
+                        return;
+
+                    case "Technologie et informatique":
+                        m.ProcessQuiz(d.TechnologiePrincipal, d.TechnologieSecondaire, d.TechnologieNumber);
+                        return;
+
+                    case "Sciences et nature":
+                        m.ProcessQuiz(d.SciencesPrincipal, d.SciencesSecondaire, d.SciencesNumber);
+                        return;
+
+                    case "Cuisine et gastronomie":
+                        m.ProcessQuiz(d.CuisinePrincipal, d.CuisineSecondaire, d.CuisineNumber);
+                        return;
+
+                }
+
+
+
     }
 
 }

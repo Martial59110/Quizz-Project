@@ -20,7 +20,7 @@ Pour lancer le projet, ouvrez un terminal, accédez au répertoire du projet, pu
 
 "dotnet run" depuis un terminal.
 
-###### Note: Assurez-vous d'exécuter la commande dotnet run depuis un terminal dans le répertoire du projet.
+
 
 ## Les étapes de mon quiz :
 

@@ -46,31 +46,8 @@ internal class Program
                 }
 
                 m.SetThemeQuizz(m, userInputLow);
-
-                Console.WriteLine($"La catégorie sélectionné est {m.ThemeQuizz}");
-                switch (m.ThemeQuizz)
-                {
-                    case "Sport":
-                        m.ProcessQuiz(d.SportPrincipal, d.SportSecondaire, d.SportNumber);
-                        return;
-
-                    case "Langues et littérature":
-                        m.ProcessQuiz(d.LanguePrincipal, d.LangueSecondaire, d.LangueNumber);
-                        return;
-
-                    case "Technologie et informatique":
-                        m.ProcessQuiz(d.TechnologiePrincipal, d.TechnologieSecondaire, d.TechnologieNumber);
-                        return;
-
-                    case "Sciences et nature":
-                        m.ProcessQuiz(d.SciencesPrincipal, d.SciencesSecondaire, d.SciencesNumber);
-                        return;
-
-                    case "Cuisine et gastronomie":
-                        m.ProcessQuiz(d.CuisinePrincipal, d.CuisineSecondaire, d.CuisineNumber);
-                        return;
-
-                }
+               m.QuizContainer( m, d);
+               return;
             }
             else
             {
