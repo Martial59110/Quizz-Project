@@ -24,19 +24,14 @@ class Quizz
     public string[][] CuisineSecondaire { get; private set; } = new string[10][];
     public string[] CuisineNumber { get; private set; } = new string[] { };
 
-    public int Score { get { return score; } set { score = value; } }
-    public int NombreAleatoire { get; set; }
-
-    public string ThemeQuizz { get; set; }
-
-    private int score;
+    
 
 
 
 
     public Quizz()
     {
-        ThemeQuizz = "";
+        
         InitialiserDonnees();
     }
     private void InitialiserDonnees()
@@ -313,102 +308,6 @@ class Quizz
 
         };
     }
-
-
-
-
-
-
-    /* #############     Méthodes     #################### */
-
-
-    public void ScoringFinalView()
-    {
-        Console.WriteLine("Le quizz est maintenant terminé.");
-        Console.WriteLine("-------------------------------------------");
-        Console.WriteLine($"\nVotre Score est de {score}.");
-        Console.ReadLine();
-    }
-    public void ScoringUpdate(Quizz d)
-    {
-
-        Score++;
-        Console.Write($"Bravo, votre score est maintenant de {d.Score} !");
-        Console.ReadLine();
-        Console.Clear();
-    }
-    public void BadAnswer(string tableau)
-    {
-        Console.WriteLine($"Faux, la réponse est {tableau}");
-        Console.ReadLine();
-        Console.Clear();
-    }
-    public void IfExit()
-    {
-        Console.WriteLine("A bientôt");
-        Console.ReadLine();
-    }
-    public string UserLower()
-    {
-
-        string? userInput = Console.ReadLine();
-        string? userInputLow = userInput?.ToLower();
-        return userInputLow;
-    }
-
-public void SetThemeQuizz(Quizz d, string userInputLow)
-{
-    switch (userInputLow)
-    {
-        case "1":
-        case "sport":
-            d.ThemeQuizz = "Sport";
-            break;
-        case "2":
-        case "littérature":
-            d.ThemeQuizz = "Langues et littérature";
-            break;
-        case "3":
-        case "technologie":
-            d.ThemeQuizz = "Technologie et informatique";
-            break;
-        case "4":
-        case "sciences":
-        case "science":
-            d.ThemeQuizz = "Sciences et nature";
-            break;
-        case "5":
-        case "cuisine":
-        case "gastronomie":
-            d.ThemeQuizz = "Cuisine et gastronomie";
-            break;
-        default:
-            d.ThemeQuizz = "Rien du tout";
-            break;
-    }
-}
-
-    public void ProcessQuiz(string[][] principal, string[][] secondaire, string[] numbers)
-    {
-        for (int i = 0; i < 10; i++)
-        {
-            Console.WriteLine(principal[0][i]);
-
-            Console.WriteLine($" Réponse 1 : {secondaire[i][0]} \n Réponse 2 : {secondaire[i][1]} \n Réponse 3 : {secondaire[i][2]} ");
-            string userInputLow = UserLower();
-            if (userInputLow == numbers[i] || userInputLow == principal[1][i].ToLower())
-            {
-                ScoringUpdate(this);
-            }
-            else
-            {
-                BadAnswer(principal[1][i]);
-            }
-        }
-
-        ScoringFinalView();
-    }
-  
 
 
 
